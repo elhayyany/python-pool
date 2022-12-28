@@ -1,0 +1,4 @@
+pip list OR conda list
+pip show numpy
+pip uninstall numpy; y
+pip install numpy
