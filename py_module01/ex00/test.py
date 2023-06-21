@@ -24,4 +24,4 @@ cookbook.add_recipe(rc5)
 cookbook.add_recipe(rc6)
 
 
-print(x for x in list(cookbook.get_recipes_by_types("starter")))# for x in range(len(cookbook.get_recipes_by_types("starter"))))
+print(cookbook.get_recipes_by_types("starter"))# for x in range(len(cookbook.get_recipes_by_types("starter"))))
