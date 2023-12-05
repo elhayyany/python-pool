@@ -1,14 +1,16 @@
 class Vector:
-    def calculate_shape(values):
-        if not isinstance(values, list) or not all(len(values) != 1 and len(values[x]) != 1 for x in values):
-            raise ValueError("bad atgument")
-        if len(values) == 1:
-            return (1, len(values[0]))    
-        return (len(values), 1)
-
     def __init__(self, values):
-        self.values = values
-        self.shape = calculate_shape(values)
+        if type(values) == list and len(values) and type(values[0]) == list:
+            self.values = values
+        elif type(values) == int and values > 0:
+            self.values = [[i] for i in range(values)]
+        elif type(values) == tuple and len(values) == 2 and type(values[0]) == int and type(values[1]) == int and values[0] <= values[1]:
+            self.values = [[i] for i in range(values[0], values[1])]
+        else:
+            raise IndentationError("not defined")
+        self.shape = (0 if (len(self.values) == 0) else len(values), len(values[0]))
     def __add__(self, x):
-        pass
+        if self.calculateShape(x) != self.shape:
+            raise ValueError("not the sape shape")
+
         
